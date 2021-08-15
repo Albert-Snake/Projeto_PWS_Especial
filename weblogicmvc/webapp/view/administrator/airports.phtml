@@ -1,0 +1,53 @@
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Asset;
+
+
+Layout::includeLayout('header') ?>
+
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+    <div class="container">
+
+    <div class="row">
+
+    <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Introduzir Aeroporto </h1>
+        </header>
+
+        <!--Formulario para introduzir os aeroportos -->
+
+        <form class="registo-formulario" action="<?= Url::toRoute('airports/store')?>" method="post">
+
+            <label> Insira o nome do aeroporto </label>  <br>
+            <input type='text' class="formulario-campo" name='name' title="Inserir o nome do aeroporto" maxlength="100" placeholder="Nome Aeroporto" required/> <br>
+
+            <label> Insira a cidade</label>  <br>
+            <input type='text' class="formulario-campo" name='city' title="Inserir a cidade" maxlength="100" placeholder="Cidade" required/> <br>
+
+            <label> Insira a morada</label>  <br>
+            <input type='text' class="formulario-campo" name='address' title="Inserir a morada" maxlength="100" placeholder="Morada (EX: Alameda prinçipal)" required/> <br>
+
+            <label> Insira o número de telefone</label>  <br>
+            <input type='tel' class="formulario-campo" name='phonenumber' title="Insira o número de telefone" maxlength="9"  pattern="[0-9]{9}" placeholder="Ex: 261  110 120" required/> <br>
+
+            <label >Insira o email</label>  <br>
+            <input type='email' class="formulario-campo" name='email' title="Inserir o email"  placeholder="EX: aeroporto@gmail.com" required/> <br>
+
+
+            <!--botao para registar aeroporto-->
+            <input type="submit" class="btn-registo" value="Introduzir Aeroporto"/><br>
+            <br><br>
+        </form>
+
+
+
+    </div>
+    </div>
+
+
+
+

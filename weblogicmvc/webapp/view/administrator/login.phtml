@@ -1,0 +1,36 @@
+
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\URL;
+Layout::includeLayout('header') ?>
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+<div class="container">
+
+    <div class="row">
+
+        <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Iniciar Sessão </h1>
+        </header>
+
+        <!--Formulario inicio sessao  -->
+
+        <form class="iniciosessao-formulario"  method="post">
+
+            <label>Nome de utilizador </label>    <br>
+            <input type='text' class="formulario-campo" name='username' title="Inserir um nome de utilizador"  placeholder="Nome utilizador" required/> <br>
+            <label>Palavra-passe </label>    <br>
+            <input type='password' class="formulario-campo" name='password' title="Inserir uma palavra passe"  placeholder="Password" required/>
+            <br>
+            <!--botao inicio sessao  -->
+            <input type="button" class="btn-registo" value="Entrar"/><br>
+            <br><br>
+        </form>
+
+
+
+    </div>
+</div>

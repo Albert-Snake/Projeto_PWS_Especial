@@ -56,6 +56,16 @@
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/Symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/Tracy/Bridges" />
+      <path value="$PROJECT_DIR$/vendor/Tracy/assets" />
+      <path value="$PROJECT_DIR$/vendor/Psr/Log" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/structure" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/edge" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/uri" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/http" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/loader" />
+      <path value="$PROJECT_DIR$/vendor/Windwalker/renderer" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />

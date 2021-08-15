@@ -57,6 +57,16 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/Symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/Symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/Symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tracy/Bridges" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tracy/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Psr/Log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Windwalker/structure" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Windwalker/edge" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Windwalker/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Windwalker/http" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Windwalker/loader" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/Windwalker/renderer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-diactoros" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

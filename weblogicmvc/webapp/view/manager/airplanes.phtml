@@ -1,0 +1,50 @@
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Asset;
+
+
+Layout::includeLayout('header') ?>
+
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+    <div class="container">
+
+    <div class="row">
+
+    <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Introduzir Avião </h1>
+        </header>
+
+        <!--Formulario para introduzir os aviões  -->
+
+        <form class="registo-formulario" action="<?= Url::toRoute('airplanes/store')?>" method="post">
+
+            <label> Insira a referência do avião </label>  <br>
+            <input type='text' class="formulario-campo" name='reference' title="Inserir a referência do aviâo" maxlength="100" placeholder="Referência (EX: A11004)" required/> <br>
+
+            <label> Insira a lotação do avião</label>  <br>
+            <input type='text' class="formulario-campo" name='capacity' title="Inserir a lotação do avião" maxlength="100" placeholder="Lotação do avião" required/> <br>
+
+            <label> Insira o tipo de avião</label>  <br>
+            <input type='text' class="formulario-campo" name='airplanetype' title="Inserir o tipo de avião" maxlength="100" placeholder="Tipo de avião (EX: airbus A330)" required/> <br>
+
+            <label >Insira a agência aérea </label>  <br>
+            <input type='text' class="formulario-campo" name='airline' title="Inserir a agência aérea"  placeholder="Agência aérea" required/> <br>
+
+
+            <!--botao para registar o avião -->
+            <input type="submit" class="btn-registo" value="Introduzir Avião"/><br>
+            <br><br>
+        </form>
+
+
+
+    </div>
+    </div>
+
+
+
+

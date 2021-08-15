@@ -1,0 +1,49 @@
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Asset;
+
+
+Layout::includeLayout('header') ?>
+
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+    <div class="container">
+
+    <div class="row">
+
+    <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Criar Conta  </h1>
+        </header>
+
+        <!--Formulario registo/criar conta  -->
+        <form class="registo-formulario" action="<?= Url::toRoute('register/store')?>" method="post">
+
+            <label> Insira o nome completo </label>  <br>
+                <input type='text' class="formulario-campo" name='fullname' title="Inserir nome completo" maxlength="100" placeholder="Nome completo" required/> <br>
+            <label >Insira a sua data de nascimeto </label>  <br>
+                <input type='date' class="formulario-campo" name='birthdate' title="Inserir data de nascimeto"  placeholder="Data de nascimento" required/> <br>
+            <label> Insira o seu endereço de email</label>  <br>
+                <input type='email' class="formulario-campo" name='email' title="Inserir endereço de email"  placeholder="Email" required/> <br>
+            <label> Insira o seu numero de telemovel, (apenas numeros)</label>  <br>
+                <input type='tel' class="formulario-campo" name='phone' title="Numero telemovel, 9 digitos" maxlength="9"  pattern="[0-9]{9}" placeholder="Ex: 961  110 120" required/> <br>
+            <label>Insira um nome de utilizador </label>    <br>
+                <input type='text' class="formulario-campo" name='username' title="Inserir um nome de utilizador"  placeholder="Nome utilizador" required/> <br>
+            <label>Insira uma palavra-passe </label>    <br>
+                <input type='password' class="formulario-campo" name='password' title="Inserir uma palavra-passe"  placeholder="Password" required/>
+            <br>
+            <!--botao para registar a conta  -->
+                <input type="submit" class="btn-registo" value="Registar"/><br>
+            <br><br>
+        </form>
+        <br>
+        <!--botao para ir para pagina iniciar sessao  -->
+        <a class="btn-iniciosessao"  href="<?= Url::toRoute('home/login')?>">Iniciar Sessão</a><br><br>
+
+
+    </div>
+    </div>
+
+

@@ -1,60 +1,67 @@
-<?php use ArmoredCore\WebObjects\Layout;
 
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\URL;
 Layout::includeLayout('header') ?>
 
-	<!-- container -->
-	<div class="container">
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
 
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">User access</li>
-		</ol>
+<?php
+include("config.php");
+session_start();
 
-		<div class="row">
-			
-			<!-- Article main content -->
-			<article class="col-xs-12 maincontent">
-				<header class="page-header">
-					<h1 class="page-title">Sign in</h1>
-				</header>
-				
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Sign in to your account</h3>
-							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signup.html">Register</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
-							<hr>
-							
-							<form>
-								<div class="top-margin">
-									<label>Username/Email <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="top-margin">
-									<label>Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
-								</div>
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    // username and password sent from form
 
-								<hr>
+    $myusername = mysqli_real_escape_string($db,$_POST['username']);
+    $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-								<div class="row">
-									<div class="col-lg-8">
-										<b><a href="">Forgot password?</a></b>
-									</div>
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Sign in</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+    $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+    $result = mysqli_query($db,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
 
-				</div>
-				
-			</article>
-			<!-- /Article -->
+    $count = mysqli_num_rows($result);
 
-		</div>
-	</div>	<!-- /container -->
+    // If result matched $myusername and $mypassword, table row must be 1 row
 
-<?php Layout::includeLayout('footer') ?>
+    if($count == 1) {
+        session_register("myusername");
+        $_SESSION['login_user'] = $myusername;
+
+        header("location: welcome.php");
+    }else {
+        $error = "Your Login Name or Password is invalid";
+    }
+}
+?>
+
+<div class="container">
+
+    <div class="row">
+
+        <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Iniciar Sessão </h1>
+        </header>
+
+        <!--Formulario inicio sessao  -->
+
+        <form class="iniciosessao-formulario" action="<?= Url::toRoute('login/start')?>" method="post">
+
+            <label>Nome de utilizador </label>    <br>
+            <input type='text' class="formulario-campo" name='username' title="Inserir um nome de utilizador"  placeholder="Nome utilizador" required/> <br>
+            <label>Palavra-passe </label>    <br>
+            <input type='password' class="formulario-campo" name='password' title="Inserir uma palavra passe"  placeholder="Password" required/>
+            <br>
+            <!--botao inicio sessao  -->
+            <input type="button" class="btn-registo" value="Entrar"/><br>
+            <br><br>
+        </form>
+
+
+
+
+
+    </div>
+</div>

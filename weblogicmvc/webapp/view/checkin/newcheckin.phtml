@@ -1,0 +1,48 @@
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Asset;
+
+
+
+Layout::includeLayout('header') ?>
+
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+    <div class="container">
+
+    <div class="row">
+
+    <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Realizar Checkin de Passageiro</h1>
+        </header>
+
+        <!--Formulario realizar checlin do passageiro  -->
+        <form class="registo-formulario" action="<?= Url::toRoute('newcheckin/store')?>" method="post">
+
+            <label> Nome do Passageiro </label>  <br>
+                <input type='text' class="formulario-campo" name='passengername' maxlength="100" placeholder="Nome Completo" required/> <br>
+
+            <label >NIF do Passageiro </label>  <br>
+                <input type='number' class="formulario-campo" name='nif'  placeholder="NIF (EX:111 115 350)" required/> <br>
+
+            <label> Número do Bilhete</label>  <br>
+                <input type='number' class="formulario-campo" name='ticketnumber'  placeholder="NºBilhete" required/> <br>
+
+            <label> Número do Voo</label>  <br>
+            <input type='number' class="formulario-campo" name='flightnumber' placeholder="NºVoo" required/> <br>
+
+            <!--botao para registar checkin-->
+        <input type="submit" class="btn-registo" value="Registar checkin"/><br>
+        <br><br>
+        </form>
+
+
+    </div>
+    </div>
+
+
+
+

@@ -1,0 +1,39 @@
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Post;
+
+
+
+Layout::includeLayout('header')?>
+
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+<div class="container">
+
+    <div class="row">
+
+    <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Operador de Checkin </h1>
+        </header>
+
+
+        <br>
+        <!--botao para ir para pagina iniciar sessao  -->
+        <a class="btn-iniciosessao"  href="<?= Url::toRoute('home/login')?>">Iniciar Sessão</a>
+
+        <!--botao para ir para pagina Realizar checkin  -->
+        <a class="btn-iniciosessao"  href="<?= Url::toRoute('checkin/newcheckin')?>">Realizar Checkin</a>
+        <br><br>
+
+
+    </div>
+
+
+
+</div>
+
+

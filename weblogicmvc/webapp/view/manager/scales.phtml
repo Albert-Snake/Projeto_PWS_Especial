@@ -1,0 +1,57 @@
+<?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Asset;
+
+
+
+Layout::includeLayout('header') ?>
+
+
+<link rel="stylesheet" href="<?= Asset::css('/register_login.css')?>" media="screen" >
+
+
+    <div class="container">
+
+    <div class="row">
+
+    <!--TITULO DA PAGINA  -->
+        <header class="page-header">
+            <h1 class="page-title">Introduzir Escala</h1>
+        </header>
+
+        <!--Formulario registar as escalas  -->
+        <form class="registo-formulario" action="<?= Url::toRoute('scales/store')?>" method="post">
+
+            <label> Insira o aeroporto de origem </label>  <br>
+                <input type='text' class="formulario-campo" name='originairport' title="Inserir aeroporto de origem" maxlength="100" placeholder="Aeroporto de origem" required/> <br>
+
+            <label >Insira o aeroporto de destino </label>  <br>
+                <input type='text' class="formulario-campo" name='destinyairport' title="Inserir aeroporto de destino"  placeholder="Aeroporto de destino" required/> <br>
+
+            <label> Insira a data de partida</label>  <br>
+                <input type='date' class="formulario-campo" name='origindate' title="Inserir a data de partida"  placeholder="Data de partida" required/> <br>
+
+            <label> Insira a hora de partida</label>  <br>
+            <input type='time' class="formulario-campo" name='origintime' title="Inserir a hora de partida"  placeholder="Hora de partida" required/> <br>
+
+            <label> Insira a data de chegada</label>  <br>
+                <input type='date' class="formulario-campo" name='destinydate' title="Inserir a data de chegada"  placeholder="Data de chegada" required/> <br>
+
+            <label> Insira a hora de chegada</label>  <br>
+            <input type='time' class="formulario-campo" name='destinytime' title="Inserir a hora de chegada"  placeholder="Hora de chegada" required/> <br>
+
+            <label>Insira a distância </label>    <br>
+                <input type='' class="formulario-campo" name='distance' title="Inserir um nome de utilizador"  placeholder="Nome utilizador" required/> <br>
+
+            <!--botao para registar a escala-->
+        <input type="submit" class="btn-registo" value="Introduzir Escala"/><br>
+        <br><br>
+        </form>
+
+
+    </div>
+    </div>
+
+
+
+
